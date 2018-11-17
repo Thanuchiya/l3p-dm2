@@ -22,11 +22,23 @@ public class SortUtils {
 	public int[] sort(int[] array) {
 		// TODO
 		if(array == null){
-			throw new IllegalArgumentException("Array can't be null");
+			throw new IllegalArgumentException("This Array is Null");
 		}
-		Arrays.sort(array);
+		int sizeArray=array.length-1;
+		for(int i=0;i< sizeArray;i++){
+			for(int j=0;j<sizeArray;j++){
+				if(array[j]>array[j+1]){
+					int index=array[j+1];
+					array[j+1]=array[j];
+					array[j]=index;
+				}
+			}
+		}
+
+
 		return array;
 	}
+
 
 }
 

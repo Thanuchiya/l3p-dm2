@@ -14,65 +14,58 @@ public class MathUtilsTest {
 	private MathUtils mathUtils = new MathUtils();
 
 	// TODO: Créez les méthodes de test ICI
-	@Test
-	public void powerTest(){
-		//GIVEN
-		int actual;
-		int expected = 27;
-		//WHEN
-		actual = mathUtils.power(3, 3);
-		//THEN
-		Assert.assertEquals(expected, actual);
-	}
+    @Test
+    public void powerTest(){
+        //GIVEN
+        int expected = 4096;
+        //WHEN
+		int actual = mathUtils.power(8, 4);
+        //THEN
+        Assert.assertEquals(expected, actual);
+    }
 
-	@Test
-	public void powerTest_under_zero(){
-		//GIVEN
-		int actual;
-		int expected = 1;
-		//WHEN
-		actual = mathUtils.power(0, 0);
-		//THEN
-		Assert.assertEquals(expected, actual);
-	}
+    @Test
+    public void factorialTest(){
+        //GIVEN
+        int actual;
+        int expected = 6;
 
-	@Test
-	public void factorialTest(){
-		//GIVEN
-		int actual;
-		int expected = 6;
-		//WHEN
-		actual = mathUtils.factorial(3);
-		//THEN
-		Assert.assertEquals(expected, actual);
-	}
+        //WHEN
+        actual = mathUtils.factorial(3);
 
-	@Test(expected = IllegalArgumentException.class)
-	public void factorialTest_error(){
-		//GIVEN
-		int c = -1;
-		//WHEN
-		mathUtils.factorial(c);
-		//THEN => EXCEPTION
-	}
+        //THEN
+        Assert.assertEquals(expected, actual);
+    }
 
-	@Test
-	public void fibonacciTest(){
-		//GIVEN
-		int actual;
-		int expected = 21;
-		//WHEN
-		actual = mathUtils.fibonacci(8);
-		//THEN
-		Assert.assertEquals(expected, actual);
-	}
+    @Test(expected = IllegalArgumentException.class)
+    public void factorialTest_under_zero(){
+        //GIVEN
 
-	@Test(expected = UnsupportedOperationException.class)
-	public void fibonacciTest_error(){
-		//GIVEN
+        //WHEN
+        mathUtils.factorial(-10);
 
-		//WHEN
-		mathUtils.fibonacci(-1);
-		//THEN => EXCEPTION
-	}
+        //THEN => EXCEPTION
+    }
+
+    @Test
+    public void fibonacciTest(){
+        //GIVEN
+        int actual;
+        int expected = 6765;
+        //WHEN
+        actual = mathUtils.fibonacci(20);
+        //THEN
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void fibonacciTest_error(){
+        //GIVEN
+        //WHEN
+        mathUtils.fibonacci(-10);
+        //THEN => EXCEPTION
+    }
 }
+
+

@@ -7,25 +7,27 @@ import java.util.ArrayList;
  */
 public class ChainUtils {
 
-	/**
-	 * Prend une chaine de caractères en paramètre et retourne le mot avec la première lettre en majuscule.
-	 *
-	 * Ex: en entrée "jE sUIS baTMan" retournera "Je Suis Batman"
-	 *
-	 * @param chain		Chaine de caractères
-	 * @return
-	 */
-	public String capitalize(String chain) {
-		ArrayList<String> array = new ArrayList<String>();
-		String lChain;
-		String[] arrayWord = chain.split(" ");
-		for(String word : arrayWord){
-			array.add(word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase());
-		}
-		lChain = String.join(" ", array);
-		String lChain1 = lChain;
-		return lChain1;
-	}
+    /**
+     * Prend une chaine de caractères en paramètre et retourne le mot avec la première lettre en majuscule.
+     * <p>
+     * Ex: en entrée "jE sUIS baTMan" retournera "Je Suis Batman"
+     *
+     * @param chain Chaine de caractères
+     * @return
+     */
 
-	}
+    public String capitalize(String chain) throws IllegalArgumentException {
+        // TODO
+        if (chain == null) {
+            throw new IllegalArgumentException();
+        }
+        String word = null;
+        String item[] = chain.split(" ");
+        for (String each : item) {
+            word = word + each.substring(0, 1).toUpperCase() + each.substring(1).toLowerCase() + " ";
+        }
+        word = word.trim();
+        return word;
+    }
 
+}
