@@ -20,18 +20,11 @@ public class ListUtilsTest {
 	public void cutTest(){
 		//GIVEN
 		List<String> liste = new ArrayList<>();
-		liste.add("H");
-		liste.add("e");
-		liste.add("l");
-		liste.add("l");
-		liste.add("o");
 		liste.add("Hello");
 		liste.add("World");
 		List<List<String>> expected = new ArrayList<List<String>>();
 		expected.add(new ArrayList<String>(liste.subList(0,2)));
 		expected.add(new ArrayList<String>(liste.subList(2,4)));
-		expected.add(new ArrayList<String>(liste.subList(4,6)));
-		expected.add(new ArrayList<String>(liste.subList(6,7)));
 		List<List<String>> testListe;
 
 		//WHEN
