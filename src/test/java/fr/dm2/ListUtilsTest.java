@@ -25,12 +25,12 @@ public class ListUtilsTest {
 		List<List<String>> expected = new ArrayList<List<String>>();
 		expected.add(new ArrayList<String>(liste.subList(0,2)));
 		expected.add(new ArrayList<String>(liste.subList(2,4)));
-		List<List<String>> testListe;
+		List<List<String>> testList;
 
 		//WHEN
-		testListe = listUtils.cut(liste, 2);
+		testList = listUtils.cut(liste, 2);
 		//THEN
-		Assert.assertEquals(expected, testListe);
+		Assert.assertEquals(expected, testList);
 	}
 
 	@Test
